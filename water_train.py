@@ -9,6 +9,7 @@ import yaml
 import mlflow
 import mlflow.sklearn
 
+
 import seaborn as sns
 import matplotlib.pyplot as plt 
 
@@ -17,6 +18,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
+import dagshub
+dagshub.init(repo_owner='pritesh13590', repo_name='water-potability-dagshub', mlflow=True)
 
 # -----------------------------
 # Set Experiment Name
@@ -26,7 +29,7 @@ mlflow.set_experiment('water_exp2_gbdt')
 # -----------------------------
 # Set Tracking uri to log artifact
 # -----------------------------
-mlflow.set_tracking_uri('http://127.0.0.1:5000')
+mlflow.set_tracking_uri('https://dagshub.com/pritesh13590/water-potability-dagshub.mlflow')
 
 # -----------------------------
 # Load Dataset
